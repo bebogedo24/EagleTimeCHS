@@ -1,0 +1,12 @@
+{
+	"Light_Color" :  "#64B5F6",
+	"Dark_Color"  :  "#1976D2",
+	
+	"Title"       :  "Lions Time",
+	"Weekday"     :  "Wednesday",
+	
+	"SQL_Host"    :  "your host name",
+	"SQL_User"    :  "sql user",
+	"SQL_Password":  "sql password",
+	"Database"    :  "your database"
+}

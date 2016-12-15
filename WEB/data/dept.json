@@ -1,0 +1,23 @@
+{
+	"Administration" : "admin",
+	"Art" : "art",
+	"Athletics" : "athletics",
+	"BCMS/Tech" : "tech",
+	"BSAP" : "bsap",
+	"CRD" : "crd",
+	"Dance" : "dance",
+	"English" : "english",
+	"FACS" : "facs",
+	"G/T" : "gt",
+	"JROTC" : "jrotc",
+	"Media Center" : "media",
+	"Mathematics" : "math",
+	"Music" : "music",
+	"PE/Health" : "pe",
+	"Science" : "science",
+	"Social Studies" : "social",
+	"Special Education" : "specialed",
+	"Student Services" : "student",
+	"Theatre" : "theatre",
+	"World Language" : "world"
+}
