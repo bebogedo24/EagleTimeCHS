@@ -44,7 +44,7 @@ $purposes = getPurposes();
 		</div>
 	</div>
 	<br>
-	<p>Screenshot your pass to use during Lions Time!</p>
+	<p>Screenshot your pass to use during Eagle Time!</p>
 	<!-- <div id="pass-save-button" class="no-select"><i class="fa fa-download"></i> Save Pass</div> -->
 	<div id="pass-delete-button" class="no-select"><i class="fa fa-trash"></i> Delete Pass</div>
 	<?php } else { ?>
