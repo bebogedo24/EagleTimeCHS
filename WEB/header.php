@@ -8,11 +8,11 @@ $loggedIn = checkLoggedIn();
 if($loggedIn) {
 	$result = $conn->query("SELECT * FROM `users` WHERE `id`=".$_SESSION['userid'])->fetch_assoc();
 	
-	$username = $result['username'];
-	$firstName = $result['firstName'];
-	$lastName = $result['lastName'];
-	$email = $result['email'];
-	$gradYear = $result['gradYear'];
+	$username = htmlspecialchars($result['username']);
+	$firstName = htmlspecialchars($result['firstName']);
+	$lastName = htmlspecialchars($result['lastName']);
+	$email = htmlspecialchars($result['email']);
+	$gradYear = htmlspecialchars($result['gradYear']);
 }
 
 $mobile = isMobile();
