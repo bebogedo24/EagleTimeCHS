@@ -39,20 +39,6 @@ if (isset ( $_POST ['submit'] )) {
 			$conn->query("UPDATE `users` SET `email`='$email' WHERE `id`=$userId");
 		}
 	}
-
-	// Update first name
-	if(isset($_POST['new-firstName'])) {
-		$firstName = $conn->real_escape_string($_POST['new-firstName']);
-		if($firstName != $_POST['firstName'] and $firstName != "")
-			$conn->query("UPDATE `users` SET `firstName`='$firstName' WHERE `id`=$userId");
-	}
-	
-	// Update last name
-	if(isset($_POST['new-lastName'])) {
-		$lastName = $conn->real_escape_string($_POST['new-lastName']);
-		if($lastName != $_POST['lastName'] and $lastName != "")
-			$conn->query("UPDATE `users` SET `lastName`='$lastName' WHERE `id`=$userId");
-	}
 	
 	// Update grad year
 	if(isset($_POST['new-gradYear'])) {
@@ -66,6 +52,13 @@ if (isset ( $_POST ['submit'] )) {
 		$maxStudents = $conn->real_escape_string($_POST['new-maxStudents']);
 		if($maxStudents != $_POST['maxStudents'] and $maxStudents != "")
 			$conn->query("UPDATE `users` SET `maxStudents`=$maxStudents WHERE `id`=$userId");
+	}
+
+	// Update first department
+	if(isset($_POST['new-dept'])) {
+		$dept = $conn->real_escape_string($_POST['new-dept']);
+		if($dept != $_POST['dept'] and $dept != "")
+			$conn->query("UPDATE `users` SET `dept`='$dept' WHERE `id`=$userId");
 	}
 
 	redir ( "./settings.php" );
@@ -103,6 +96,14 @@ if($isTeacher)
 		<br>
 		<form method="post">
 			<table>
+            			<tr>
+					<td>
+						<span><?php echo " ".$userData['firstName'].""; ?>&nbsp;</span>
+					</td>
+					<td>
+						<span><?php echo " ".$userData['lastName'].""; ?></span>
+					</td>
+				</tr>
 				<tr>
 					<td>
 						<span>Username: </span>
@@ -119,24 +120,6 @@ if($isTeacher)
 					<td>
 						<input name="new-email" type="email"
 							value=<?php echo "'".$userData['email']."'"; ?>>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span>First Name: </span>
-					</td>
-					<td>
-						<input name="new-firstName" type="text"
-							value=<?php echo "'".$userData['firstName']."'"; ?>>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span>Last Name: </span>
-					</td>
-					<td>
-						<input name="new-lastName" type="text"
-							value=<?php echo "'".$userData['lastName']."'"; ?>>
 					</td>
 				</tr>
 				<tr>
@@ -160,6 +143,28 @@ if($isTeacher)
 							min='0'>
 					</td>
 				</tr>
+                			<tr>
+					<td>
+						<span>Department: </span>
+					</td>
+					<td>
+						<select name="new-dept">
+                        				<?php
+								$depts = getDeptartments();
+								$userDept = "".$userData['dept']."";
+
+								foreach($depts as $dept => $deptKey) {
+
+									if ($deptKey == $userDept) {
+										echo "<option value='$deptKey' selected='selected'><label for='radio-dept-$deptKey'>$dept</label><br></option>";
+									} else {
+										echo "<option value='$deptKey'><label for='radio-dept-$deptKey'>$dept</label><br></option>";
+									}
+								}
+							?>
+						</select>
+					</td>
+				</tr>
 				<?php } ?>
 			</table>
 			<br>
@@ -172,6 +177,7 @@ if($isTeacher)
 			<input name="gradYear" type="hidden" value=<?php echo "'".$userData['gradYear']."'"; ?>>
 			<input name="userid" type="hidden" value=<?php echo "'".$_SESSION['userid']."'"; ?>>
 			<input name="maxStudents" type="hidden" value=<?php echo "'".$_SESSION['maxStudents']."'"; ?>>
+            <input name="dept" type="hidden" value=<?php echo "'".$_SESSION['dept']."'"; ?>>
 		</form>
 	</div>
 	
