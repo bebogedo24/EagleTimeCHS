@@ -1,4 +1,9 @@
 
+var menuRadius = "120px",
+    iconWidth = "28px",
+    black5 = "rgba(0,0,0,0.5)",
+    white5 = "rgba(1,1,1,0.5)";
+
 function registerRadialMenu(inevent, outevent) {
 	
 	// Angle values
@@ -44,11 +49,11 @@ function registerRadialMenu(inevent, outevent) {
 			$("#radmenu-glow").hide();
 			// Shrink hover area
 			$(this).css({
-				"width"                   : "var(--menu-radius)",
-				"height"                  : "calc(var(--menu-radius) * 0.5)",
-				"border-top-left-radius"  : "calc(var(--menu-radius) * 0.5)",
-				"border-top-right-radius" : "calc(var(--menu-radius) * 0.5)",
-				"left"                    : "calc(50% - var(--menu-radius) * 0.5)"
+				"width"                   : menuRadius,
+				"height"                  : "calc(" + menuRadius + " * 0.5)",
+				"border-top-left-radius"  : "calc(" + menuRadius + " * 0.5)",
+				"border-top-right-radius" : "calc(" + menuRadius + " * 0.5)",
+				"left"                    : "calc(50% - " + menuRadius + " * 0.5)"
 			});
 			// Move icons back in
 			$("#radmenu-item-container i, #radmenu-item-container small").each(function() {
@@ -68,7 +73,7 @@ function registerRadialMenu(inevent, outevent) {
 		function() {
 			
 			// Change icon color
-//			$(this).animate({"color" : "var(--black-5)"}, 100);
+//			$(this).animate({"color" : black5}, 100);
 			
 			// Move glow into position and fade it in
 			$("#radmenu-glow").show();
@@ -85,7 +90,7 @@ function registerRadialMenu(inevent, outevent) {
 		function() {
 		
 			// Change icon color back
-//			$(this).animate({"color" : "var(--white-5)"}, 100);
+//			$(this).animate({"color" : white5}, 100);
 			
 			// Fade glow out
 			$("#radmenu-glow").fadeOut(200);
