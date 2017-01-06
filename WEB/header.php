@@ -7,7 +7,7 @@ $loggedIn = checkLoggedIn();
 
 if($loggedIn) {
 	$result = $conn->query("SELECT * FROM `users` WHERE `id`=".$_SESSION['userid'])->fetch_assoc();
-	
+
 	$username = htmlspecialchars($result['username']);
 	$firstName = htmlspecialchars($result['firstName']);
 	$lastName = htmlspecialchars($result['lastName']);
@@ -27,33 +27,27 @@ $config = json_decode(file_get_contents("data/CONFIG.json"), true);
 <head>
 	<title><?php echo $config['Title']." ".date("Y") ?></title>
 	<link href="/css/reset.css" rel="stylesheet" type="text/css">
-	
+
 	<!-- Conventional stylesheets, use CSS3 variables
 	<link href="/css/style.css" rel="stylesheet" type="text/css">
 	<link href="/css/menu-style.css" rel="stylesheet" type="text/css">
-	
+
 	For cross-browser support, using PHP variables instead:
 	-->
-	<?php 
+	<?php
 	include './css/style.php';
 	include './css/menu-style.php';
 	?>
-	
+
 	<link rel="stylesheet" type="text/css" href="/css/Hover-master/css/hover.css">
 	<link rel="stylesheet" type="text/css" href="/css/Font-Awesome/css/font-awesome.css">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<script src="/js/jquery.min.js"></script>
-	
-	<!-- Favicon stuff -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/favicon/manifest.json">
-	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#2196f3">
-	<link rel="shortcut icon" href="/favicon/favicon.ico">
-	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
+
+	<!-- Favicon-->
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<meta name="theme-color" content="#1976d2">
-	
+
 	<?php
 	// Include different styles if they're on mobile
 	if($mobile) { ?>
@@ -93,7 +87,7 @@ $config = json_decode(file_get_contents("data/CONFIG.json"), true);
 			<i id="dropmenu-glow" class="fa fa-circle"></i>
 		</div>
 		-->
-		
+
 		<!-- Radial menu (using this one for desktop and mobile) -->
 		<div id="radmenu-container">
 			<div id="radmenu">
@@ -111,11 +105,11 @@ $config = json_decode(file_get_contents("data/CONFIG.json"), true);
 		</div>
 		<i id="radmenu-glow" class="fa fa-circle"></i>
 		<?php } ?>
-		
+
 		<!-- Info bar -->
 		<div id="info-bar">Error</div>
 	</div>
-	
+
 	<script src="/js/radmenu.js"></script>
 	<script src="/js/transitions.js"></script>
 	<script src="/js/init.js"></script>
