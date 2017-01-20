@@ -1,2 +1,7 @@
 # Disable directory browsing
 Options All -Indexes
+
+# Redirect HTTP requests to HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
