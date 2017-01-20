@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<!--Home Page-->
+	<url>
+		<loc>https://chseagletime.com/</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1.0</priority>
+	</url>
+	
+	<!--Login-->
+	<url>
+		<loc>https://chseagletime.com/login.php</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	
+	<!--Signups-->
+	<url>
+		<loc>https://chseagletime.com/signup.php</loc>
+		<changefreq>daily</changefreq>
+		<priority>0.8</priority>
+	</url>
+	
+	<!--Passes-->
+	<url>
+		<loc>https://chseagletime.com/passes.php</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	
+	<!--Register-->
+	<url>
+		<loc>https://chseagletime.com/register.php</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	
+	<!--Settings-->
+	<url>
+		<loc>https://chseagletime.com/settings.php</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+</urlset>
