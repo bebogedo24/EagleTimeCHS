@@ -44,7 +44,7 @@ $firstTime = $conn->query("SELECT `firstTime` FROM `users` WHERE `id`=".$_SESSIO
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<h2>SELECT A DEPARTMENT</h2>
-					<small>Swipe to continue...</small>
+					<h5>Swipe right to continue...</h5>
 					<br><br>
 					<div class="swiper-slide-box columns">
 						<?php
@@ -56,7 +56,7 @@ $firstTime = $conn->query("SELECT `firstTime` FROM `users` WHERE `id`=".$_SESSIO
 				</div>
 				<div class="swiper-slide">
 					<h2>SELECT A TEACHER</h2>
-					<small>Swipe to continue...</small>
+					<h5>Swipe right to continue...</h5>
 					<br><br>
 					<div class="swiper-slide-box" id="signup-teachers">
 						
@@ -64,7 +64,6 @@ $firstTime = $conn->query("SELECT `firstTime` FROM `users` WHERE `id`=".$_SESSIO
 				</div>
 				<div class="swiper-slide">
 					<h2>SELECT A PURPOSE</h2>
-					<small>Slide to continue...</small>
 					<br><br>
 					<div class="swiper-slide-box">
 						<?php
